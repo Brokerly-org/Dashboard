@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+$background-color: #1e1e1e;
+$black-second: #4d4d4d;
+$black-third: #5f5e5e;
+$blue-primary: #3478db;
+$blue-primary-dark: #214a8b;
+$white: #fdfdfd;
+$green: rgb(82, 219, 18);
+$hover-black: rgb(122, 122, 122);y
+
+:global(body) {
+    font-family: "Roboto", sans-serif;
+    background-color: $background-color;
+    color: $white;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+// *:not(input) {
+//     user-select: none;
+// }
+
