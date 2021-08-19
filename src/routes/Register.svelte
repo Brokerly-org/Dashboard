@@ -10,7 +10,12 @@
 <div class="register">
     <input 
         on:change={(e) => (userInputValue = e.target.value)}
-        type="text" placeholder="Username" />
+        on:keyup={e => {
+            if (e.key === 'Enter') handleRegister()
+        }}
+        type="text" placeholder="Username" 
+
+    />
     <div class="input-password">
         <input
             type={inputPassVisible ? "text" : "password"}
@@ -18,6 +23,9 @@
             autocomplete="false"
             bind:this={inputPassElement}
             on:change={(e) => (passInputValue = e.target.value)}
+            on:keyup={e => {
+                if (e.key === 'Enter') handleRegister()
+            }}
         />
 
         <i
@@ -29,13 +37,13 @@
     <RippleButton text="Register" on:click={handleRegister} />
 </div>
 
-<div class="separator" />
-<button 
+<p class="already">Already have an account?</p>
+<p
     on:click={() => navigate('/login')} 
     class="sign-in"
 >
 Sign in
-</button>
+</p>
 
 
 

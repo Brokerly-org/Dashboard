@@ -82,33 +82,16 @@
     }
 }
 
-.separator {
-    width: 420px;
-    margin: auto;
-    margin-top: 50px;
-    border-radius: 5px;
-    height: 2px;
-    background: #7A7A7A;
+p {
+    text-align: center;
 }
 
+.already {
+    margin-top: 20px;
+}
 .sign-in {
-    all: unset;
-    user-select: none;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 1.7em;
-    width: 180px;
-    height: 55px;
-    background: #42B72A;
-    margin-top: 20px;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    font-weight: normal;
+    color: green;
     cursor: pointer;
-    color: #fff;
-    transition: background 250ms ease;
-    &:hover {
-        background: #40992e;
-    }
+    font-weight: bold;
+    margin-top: 5px;
 }

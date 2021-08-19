@@ -9,7 +9,11 @@
     <div class="input-username">
         <input 
             on:change={e => userInputValue = e.target.value}
-            type="text" placeholder="Username" />
+            on:keyup={e => {
+                if (e.key === 'Enter') handleRegister()
+            }}
+            type="text" placeholder="Username" 
+        />
     </div>
     <div class="input-password">   
 
@@ -18,7 +22,7 @@
             placeholder="Password" 
             autocomplete="false" 
             on:change={ e => passInputValue = e.target.value }
-            on:keypress={e => {
+            on:keyup={e => {
                 console.log(e.key === 'Enter')
                 console.log(passInputValue)
                 if (e.key === 'Enter') loginHandler()
@@ -43,7 +47,7 @@
 
 <div class="separator" />
 <button class="register" on:click={() => navigate('/register')}>
-    Sign up
+    Register
 </button>
 
 

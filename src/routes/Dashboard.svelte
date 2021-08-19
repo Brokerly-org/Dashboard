@@ -5,6 +5,7 @@
     @import "../style/dashboard.scss";
 </style>
 <nav>
+
     <div class="logo">Brokerly</div>
     <div class="sign-out" on:click={() => {
         localStorage.clear()
@@ -26,6 +27,9 @@
         >
             <input autofocus
                 on:change={(e) => brokerInputValue = e.target.value} 
+                on:keyup={e => {
+                    if (e.key === 'Enter') addBroker()
+                }}
                 type="text" 
                 placeholder="Broker name" 
                 bind:this={addBrokerInputElement}
@@ -86,17 +90,25 @@
                             <i class="fas fa-link"></i>
                         {/if}
                     </div>
-                    <div class="remove" on:click={ () => brokers = brokers.filter(i => i.token !== broker.token) }>
+                    <div class="remove" on:click={ () => {
+                        brokers = brokers.filter(i => i.token !== broker.token) 
+                        Api.deleteBot(broker.botname, localStorage.token)
+                    }}>
                         <i class="fas fa-trash"></i>
                     </div>
                 </div>
             </div>
         {/each}
     {/await}
+
+    {#if brokers.length === 0}
+        <EmptyDash className='empty-dash' />
+    {/if}
 </div>
 
 <script>
     import Api from './Api'
+    import EmptyDash from '../components/emptyDash.svg.svelte';
     import { useNavigate, useLocation } from "svelte-navigator";
     import { copyToClipboard, parseUnixTimestamp, toTitleCase } from "./utils";
     import { onMount } from "svelte";

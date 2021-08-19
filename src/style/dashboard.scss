@@ -32,6 +32,10 @@ nav {
 }
 
 
+:global(.empty-dash) {
+    margin: auto;
+    margin-top: 30px;
+}
 .brokers-list {
     margin: auto;
     display: flex;
@@ -45,6 +49,8 @@ nav {
     /* overflow-y: auto;
     overflow-x: visible; */
     
+    
+
     .broker {
         width: 100%;
         height: 60px;
