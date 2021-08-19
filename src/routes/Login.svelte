@@ -10,7 +10,7 @@
         <input 
             on:change={e => userInputValue = e.target.value}
             on:keyup={e => {
-                if (e.key === 'Enter') handleRegister()
+                if (e.key === 'Enter') loginHandler()
             }}
             type="text" placeholder="Username" 
         />
@@ -74,12 +74,9 @@ import { debug } from "svelte/internal";
     }
 
     const loginHandler = async () => {
-        console.log('login handler')
-        // if (!userInputValue || !passInputValue) return
-        debugger
+        if (!userInputValue || !passInputValue) return
         const res = await Api.login(userInputValue, passInputValue)
         if (res.status !== 200) {
-            console.log('wrong pass')
             wrongPassTyped = true
             return
         }

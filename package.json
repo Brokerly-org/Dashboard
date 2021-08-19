@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c --single -o ../Server/src/static/bundle.js",
-    "dev": "rollup -c -w --single",
+    "build": "rollup -c -o ../Server/src/static/bundle.js",
+    "dev": "rollup -c -w",
     "start": "sirv public --no-clear --single"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "sass": "^1.37.5",
     "sirv-cli": "^1.0.0",
     "svelte-navigator": "^3.1.5",
-    "svelte-preprocess": "^4.7.4"
+    "svelte-preprocess": "^4.7.4",
+    "svelte-qrcode": "^1.0.0"
   }
 }

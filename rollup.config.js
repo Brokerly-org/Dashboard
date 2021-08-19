@@ -42,7 +42,7 @@ export default {
 		copy({
 			targets: [
 			  { src: 'public/index.html', dest: '../Server/src/templates/' },
-			  { src: 'public/favicon.png', dest: '../Server/src/static/' }
+			  { src: 'public/favicon.ico', dest: '../Server/src/static/' }
 			]
 		}),
 		svelte({

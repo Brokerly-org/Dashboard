@@ -1,9 +1,12 @@
+import {parseUnixTimestamp, toTitleCase} from './utils'
+
+
 export default class Api {
     
     static async createBot(botName, title, desc, token) {
         // /user/create_bot put
         const res = await fetch(
-            `/user/create_bot?botname=${botName}&title=${botName.toTitleCase()}&description=Hi, I'm description&token=${token}`,
+            `/admin/create_bot?botname=${botName}&title=${ toTitleCase(botName) }&description=Hi, I'm description&token=${token}`,
             { method: "PUT" }
         );
         const data = await res.json();
@@ -12,14 +15,14 @@ export default class Api {
 
     static async deleteBot(botName, token) {
         // /user/delete_bot delete
-        const res = fetch(`/user/delete_bot?botname=${botName}&token=${token}`, {
+        const res = fetch(`/admin/delete_bot?botname=${botName}&token=${token}`, {
             method: "DELETE",
         });
         return await res.json()
     }
 
     static async getBotList(token) {
-        const res = await fetch(`/user/bot_list?token=${token}`);
+        const res = await fetch(`/admin/bot_list?token=${token}`);
         const data = await res.json();
         const bots = data.bots;
         return bots
@@ -36,5 +39,14 @@ export default class Api {
             { method: "POST" }
         );
         return await res.json()
+    }
+
+    static generateBotUrl(botName, host, isSecure) {
+        const botShareUrl = `https://brokerly.tk/bot/${isSecure ? 'secure' : 'unsecure'}/${botName}?url=${host}`
+        return botShareUrl
+    }
+
+    static isOnline(last_online) {
+        return new Date() - parseUnixTimestamp(last_online) > 5*60*1000
     }
 }

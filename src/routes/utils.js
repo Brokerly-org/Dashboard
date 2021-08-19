@@ -24,9 +24,9 @@ export function copyToClipboard(textToCopy) {
 }
 
 
-export function toTitleCase () {
-    return this.valueOf().toLowerCase()
-    .replace(this.valueOf()[0], this.valueOf()[0].toUpperCase());
+export function toTitleCase (string) {
+    return string.valueOf().toLowerCase()
+    .replace(string.valueOf()[0], string.valueOf()[0].toUpperCase());
 }
 
 export function parseUnixTimestamp(unix_timestamp) {
