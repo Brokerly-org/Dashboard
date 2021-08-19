@@ -47,7 +47,7 @@
 
 <div class="separator" />
 <button class="register" on:click={() => navigate('/register')}>
-    Register
+    Create new account
 </button>
 
 

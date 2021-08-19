@@ -37,13 +37,10 @@
     <RippleButton text="Register" on:click={handleRegister} />
 </div>
 
-<p class="already">Already have an account?</p>
-<p
-    on:click={() => navigate('/login')} 
-    class="sign-in"
->
-Sign in
-</p>
+<p 
+on:click={() => navigate('/login')} 
+class="already">
+Already have an account?</p>
 
 
 
