@@ -44,12 +44,22 @@
     .second-instruction {
         display: flex;
         align-items: center;
-        
-
     }
     :global(.action-button) {
         width: 42px;
         height: 42px;
+    }
+
+    .third-instruction {
+        display: flex;
+        align-items: center;   
+    }
+
+    :global(.qr-svg) {
+        height: 25px;
+        margin-left: 5px;
+        font-size: 1em;
+        color: black;
     }
 
 

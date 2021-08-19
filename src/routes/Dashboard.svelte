@@ -28,7 +28,11 @@
                         <p>2. Tap the action button</p>
                         <ActionButton class="action-button" />
                     </div>
-                    <p>3. Point your phone to this screen to capture the code</p>
+                    <div class="third-instruction">
+                        <p>3. Tap the qr scan button</p>
+                        <QrSvg class='qr-svg' />
+                    </div>
+                    <p>4. Point your phone to this screen to capture the code</p>
                 </div>
             </div>
         </div>
@@ -79,7 +83,7 @@
     {:then} 
         {#each brokers as broker (broker.token)}
             <div class="broker">
-                <div class="tooltip"><span class="tooltiptext">broker status</span>
+                <div class="tooltip"><span class="tooltiptext">broker {Api.isOnline(broker.last_online) ? 'offline' : 'online'}</span>
                     <div class={`status ${
                         Api.isOnline(broker.last_online) ? 'offline' : 'online' // check if bot active in last 5 minutes
                     }`}>
@@ -160,7 +164,8 @@
 <script>
     import Api from './Api'
     import EmptyDash from '../components/emptyDash.svg.svelte';
-    import ActionButton from '../components/ActionButton.svelte'
+    import ActionButton from '../components/ActionButton.svg.svelte'
+    import QrSvg from '../components/qr.svg.svelte'
     import { useNavigate, useLocation } from "svelte-navigator";
     import { copyToClipboard } from "./utils";
     import QrCode from "svelte-qrcode"
