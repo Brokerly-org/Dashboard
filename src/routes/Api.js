@@ -29,13 +29,13 @@ export default class Api {
     }
 
     static async login(user, pass) {
-        const res = await fetch(`/user/login?email=${user}&password=${pass}`, { method: "POST" })
+        const res = await fetch(`/auth/login?email=${user}&password=${pass}`, { method: "POST" })
         return res
     }
 
     static async register(user, pass) {
         const res = await fetch(
-            `/user/register?email=${user}&password=${pass}&name=todo`,
+            `/auth/register?email=${user}&password=${pass}&name=todo`,
             { method: "POST" }
         );
         return await res.json()
