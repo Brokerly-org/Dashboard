@@ -2,7 +2,7 @@
     <title>Register - Brokerly</title>
 </svelte:head>
 <style lang="scss">
-    @import "../style/register.scss";
+    @import "../style/register/register.scss";
 </style>
 
 <div class="logo">Brokerly</div>

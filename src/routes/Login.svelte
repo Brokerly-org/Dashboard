@@ -1,7 +1,7 @@
 <svelte:head>
     <title>Login - Brokerly</title>
 </svelte:head>
-<style lang="scss"> @import '../style/login'; </style>
+<style lang="scss">@import '../style/login/login'; </style>
 
 <div class="logo">Brokerly</div>
 <div class="title">Sign in</div>
