@@ -67,9 +67,9 @@ import { debug } from "svelte/internal";
     wrongPassTyped = false
 
     const toggleInputPass = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         inputPassVisible = !inputPassVisible
-        inputPassElement.focus()
+        // inputPassElement.focus()
         
     }
 

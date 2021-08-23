@@ -18,14 +18,15 @@ $hover-black: rgb(122, 122, 122);
     color: $white;
 }
 
-*,
+
+
+:global(*,
 *::before,
-*::after {
+*::after) {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 // *:not(input) {
 //     user-select: none;

@@ -81,11 +81,12 @@
         position: relative;
         background: $black-second;
         border-radius: 5px;
+        width: 100%;
         &:focus-within {
             border: $blue-primary 2px solid;
         }
         input {
-            width: 87%;
+            width: 100%;
             &:focus {
                 outline: none;
             }
