@@ -6,8 +6,8 @@
 	if (localStorage.token) {
 		navigate('/dashboard')
 	} else {
-		// navigate('/login')
-		navigate('/dashboard')
+		navigate('/login')
+		// navigate('/dashboard')
 	}
 </script>
 <style lang="scss">@import 'style/base.scss';</style>
