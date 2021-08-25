@@ -1,0 +1,23 @@
+$break1:    "(max-width: 765px)";
+$break2:    "(min-width: 766px) and (max-width: 1199px)";
+
+// basic styling first without media queries
+
+
+
+// 3 breakpoints is best
+// 320px to 767.9 (only max-width 767.9 )
+// 768px to 1199.9
+// 1200px
+
+.som-component {
+    @media #{$break1} {
+
+    }
+}
+
+.other-component {
+    @media #{$break1}, #{$break2} {
+
+    }
+}

@@ -83,6 +83,7 @@ import { debug } from "svelte/internal";
         const data = await res.json()
         if (data.token) {
             localStorage.setItem('token', data.token)
+            localStorage.setItem('userName', userInputValue)
             navigate('/dashboard')
         }
     }

@@ -71,6 +71,7 @@ Already have an account?</p>
         const res = await Api.register(userInputValue, passInputValue)
         const token = res.token;
         localStorage.setItem("token", token);
+        localStorage.setItem('userName', userInputValue)
         navigate('/dashboard')
     }
 </script>

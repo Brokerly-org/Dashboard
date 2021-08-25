@@ -124,14 +124,23 @@ nav {
         left: 20px;
         top: 14px;
     }
-    .sign-out {
+
+    .nav-right {
         display: flex;
-        align-items: center;
         margin-left: auto;
-        margin-right: 50px;
-        height: 100%;
-        font-size: 2.8em;
-        cursor: pointer;
+        align-items: center;
+        gap: 25px;
+        .user-name {
+            font-size: 1.3em;
+        }
+        .sign-out {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            height: 100%;
+            font-size: 2.8em;
+            cursor: pointer;
+        }
     }
 }
 

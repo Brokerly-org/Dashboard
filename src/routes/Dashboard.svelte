@@ -41,11 +41,14 @@
 
 <nav>
     <div class="logo">Brokerly</div>
-    <div class="sign-out" on:click={() => {
-        localStorage.clear()
-        navigate("/login")
-    }}>
-        <i class="fa fa-sign-out" aria-hidden="true" />
+    <div class="nav-right">
+        <div class="user-name">{localStorage.userName}</div>
+        <div class="sign-out" on:click={() => {
+            localStorage.clear()
+            navigate("/login")
+        }}>
+            <i class="fa fa-sign-out" aria-hidden="true" />
+        </div>
     </div>
 </nav>
 <div class="download-app" />

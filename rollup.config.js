@@ -36,13 +36,13 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: '../Server/src/static/bundle.js'
+		file: '../Server/core/views/static/bundle.js'
 	},
 	plugins: [
 		copy({
 			targets: [
-			  { src: 'public/index.html', dest: '../Server/src/templates/' },
-			  { src: 'public/favicon.ico', dest: '../Server/src/static/' }
+			  { src: 'public/index.html', dest: '../Server/src/core/views/templates' },
+			  { src: 'public/favicon.ico', dest: '../Server/src/core/views/static/' }
 			]
 		}),
 		svelte({

@@ -143,19 +143,3 @@
         opacity: 1;
     }
 }
-
-
-
-
-
-// responsive
-$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
-
-$phone: 320px;
-$tablet: 768px;
-/* Inclusive and exclusive operators for a finer control over the intervals */
-@media screen and (min-width: $phone) and (max-width: $tablet) {
-    .login {
-        margin-top: 15px;
-    }
-}
