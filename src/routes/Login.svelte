@@ -1,7 +1,7 @@
 <svelte:head>
     <title>Login - Brokerly</title>
 </svelte:head>
-<style lang="scss"> @import '../style/login'; </style>
+<style lang="scss">@import '../style/login/login'; </style>
 
 <div class="logo">Brokerly</div>
 <div class="title">Sign in</div>
@@ -67,9 +67,9 @@ import { debug } from "svelte/internal";
     wrongPassTyped = false
 
     const toggleInputPass = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         inputPassVisible = !inputPassVisible
-        inputPassElement.focus()
+        // inputPassElement.focus()
         
     }
 

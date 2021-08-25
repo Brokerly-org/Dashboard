@@ -2,7 +2,7 @@
     <title>Dashboard - Brokerly</title>
 </svelte:head>
 <style lang="scss">
-    @import "../style/dashboard.scss";
+    @import "../style/dashboard/dashboard.scss";
 </style>
 
 

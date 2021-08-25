@@ -1,24 +1,29 @@
-@import 'base.scss';
+@import '../base.scss';
+@import '../devices.scss';
 
-
-:global(body) {
-    font-family: "Roboto", sans-serif;
-    background-color: $background-color;
-    color: $white;
+@media #{$break1} { // mobile ?
+    :global(body) {
+        font-size: 5px;
+    }
 }
 
 .logo {
     position: absolute;
     left: 50px;
     top: 50px;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @media #{$break1} {
+        left: 25px;
+        top: 25px;
+        font-size: 1.5rem;
+    }
 }
 
 .title {
     margin: auto;
-    margin-top: 150px;
+    margin-top: 15vh;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
@@ -33,10 +38,16 @@
     margin: auto;
     margin-top: 50px;
 
+
+    @media #{$break1} { // mobile ?
+        width: 90%;
+    }
+
+
     input {
         width: 100%;
         height: 60px;
-        font-size: 2.3rem;
+        font-size: 2rem;
         background: $black-second;
         color: white;
         border: none;
@@ -54,11 +65,13 @@
 
     .input-username {
         border-radius: 4px;
+        width: 100%;
     }
     .input-password {
         position: relative;
         background: $black-second;
         border-radius: 5px;
+        width: 100%;
         &:focus-within {
             border: $blue-primary 2px solid;
         }
@@ -76,6 +89,10 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+
+            @media #{$break1} {
+                font-size: 4.5em;
+            }
         }
     }
 }
@@ -116,7 +133,7 @@
     user-select: none;
     text-align: center;
     border-radius: 4px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     width: 250px;
     height: 55px;
     background: $green-second;
@@ -139,6 +156,9 @@
     text-align: left;
     margin-top: 5px;
     opacity: 0;
+    @media #{$break1} {
+        font-size: 4em;
+    }
     &.active {
         opacity: 1;
     }

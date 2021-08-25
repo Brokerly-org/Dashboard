@@ -1,10 +1,22 @@
-@import 'base.scss';
+@import '../base.scss';
+@import '../devices.scss';
+
+@media #{$break1} { // mobile ?
+    :global(body) {
+        font-size: 5px;
+    }
+}
 
 .logo {
     position: absolute;
     left: 50px;
     top: 50px;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @media #{$break1} {
+        left: 25px;
+        top: 25px;
+        font-size: 1.5rem;
+    }
 }
 
 .title {
@@ -25,6 +37,13 @@
     width: 420px;
     margin: auto;
     margin-top: 50px;
+
+
+    @media #{$break1} { // mobile ?
+        width: 90%;
+    }
+
+
     input {
         width: 100%;
         height: 60px;
@@ -62,11 +81,12 @@
         position: relative;
         background: $black-second;
         border-radius: 5px;
+        width: 100%;
         &:focus-within {
             border: $blue-primary 2px solid;
         }
         input {
-            width: 87%;
+            width: 100%;
             &:focus {
                 outline: none;
             }
@@ -79,6 +99,9 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+            @media #{$break1} {
+                font-size: 4.5em;
+            }
         }
     }
 }
@@ -92,4 +115,7 @@ p {
     cursor: pointer;
     color: $blue-primary;
     font-size: 1.2em;
+    @media #{$break1} {
+        font-size: 1.1rem;
+    }
 }

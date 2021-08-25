@@ -2,7 +2,7 @@
     <title>Register - Brokerly</title>
 </svelte:head>
 <style lang="scss">
-    @import "../style/register.scss";
+    @import "../style/register/register.scss";
 </style>
 
 <div class="logo">Brokerly</div>
@@ -31,6 +31,7 @@
         <i
             on:mousedown={e => e.preventDefault()}
             on:click={toggleInputPass}
+            on:mouseup={e => e.preventDefault()}
             class={inputPassVisible ? "fas fa-eye" : "fas fa-eye-slash"}
         />
     </div>
@@ -61,9 +62,9 @@ Already have an account?</p>
 
 
     const toggleInputPass = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         inputPassVisible = !inputPassVisible
-        inputPassElement.focus()
+        // inputPassElement.focus()
     }
     /* username must be with mail format!!!! */
     async function handleRegister() {
