@@ -56,8 +56,8 @@
 <script>
     import RippleButton from "../components/rippleButton.svelte";
     import { navigate } from "svelte-navigator";
-import Api from "./Api";
-import { debug } from "svelte/internal";
+    import Api from "./Api";
+    import { debug } from "svelte/internal";
 
     let passInputValue = '', 
     userInputValue = '',

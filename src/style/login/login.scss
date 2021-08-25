@@ -1,5 +1,5 @@
 @import '../base.scss';
-@import '../devices.scss';
+@import '../devices';
 
 @media #{$break1} { // mobile ?
     :global(body) {
