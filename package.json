@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c -o ../Server/core/views/static/bundle.js",
+    "build": "rollup -c -o ../Server/src/core/views/static/bundle.js",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --single"
   },
