@@ -36,7 +36,8 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: '../Server/core/views/static/bundle.js'
+		file: '../Server/src/core/views/static/bundle.js'
+		
 	},
 	plugins: [
 		copy({
