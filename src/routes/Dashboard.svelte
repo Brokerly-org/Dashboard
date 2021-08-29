@@ -86,9 +86,10 @@
     {:then} 
         {#each brokers as broker (broker.token)}
             <div class="broker">
-                <div class="tooltip"><span class="tooltiptext">broker {Api.isOnline(broker.last_online) ? 'offline' : 'online'}</span>
+                <div class="tooltip"><span class="tooltiptext">broker {Api.isOnline(broker.online_status) ? 'offline' : 'online'}</span>
                     <div class={`status ${
-                        Api.isOnline(broker.last_online) ? 'offline' : 'online' // check if bot active in last 5 minutes
+                        // Api.isOnline(broker.online_status) check if bot active in last 5 minutes 
+                        broker.online_status ? 'online' : 'offline'
                     }`}>
                         <i class="fas fa-circle"></i>
                     </div>
