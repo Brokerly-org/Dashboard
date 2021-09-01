@@ -186,12 +186,15 @@
 
     const getBotList = async () => {
         const data = await Api.getBotList(localStorage.token)
-        brokers = [...data]
+        brokers = [...data].reverse()
     }
     
 
 
     const getBotListPromise = getBotList()
+    setInterval(() => {
+        const getBotListPromise = getBotList()
+    }, 5000)
 
 
     let brokers = [],
