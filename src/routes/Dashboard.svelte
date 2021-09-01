@@ -116,11 +116,8 @@
                 <div class="tooltip"><span class="tooltiptext">Scan qr</span>
                     <i class="fa fa-qrcode qr" aria-hidden="true" 
                         on:click={() => {
-                            const host = window.location.host
-                            const isSecure = window.location.protocol.startsWith('https')
-                            const botShareUrl = Api.generateBotUrl(broker.botname, host, isSecure)
                             
-                            openScanQrModal = {state: true, url: botShareUrl}
+                            openScanQrModal = {state: true, url: generateBotLink(broker.botname)}
                         }}
                     />
                 </div>
@@ -129,12 +126,11 @@
                     <div class=
                         {`bot-link 
                             ${CopyUrlToClipboardAnimate.state && CopyUrlToClipboardAnimate.token === broker.token ?
-                                 'active' : ''}`
+                                'active' : ''}`
                         } 
                         on:click={() => {
                         const isSecure = window.location.protocol.startsWith('https')
-                        const host = window.location.host
-                                               
+                        const host = window.location.host        
                         const botShareUrl = Api.generateBotUrl(broker.botname, host, isSecure)
                         copyToClipboard(botShareUrl)
                         CopyUrlToClipboardAnimate = {state: true, token: broker.token}
@@ -149,6 +145,7 @@
                             <i class="fas fa-link"></i>
                         {/if}
                     </div>
+                    
                     <div class="remove" on:click={ () => {
                         brokers = brokers.filter(i => i.token !== broker.token) 
                         Api.deleteBot(broker.botname, localStorage.token)
@@ -179,6 +176,13 @@
 
     const navigate = useNavigate();
     const location = useLocation();
+
+
+    const generateBotLink = (botname) => {
+        const isSecure = window.location.protocol.startsWith('https')
+        const host = window.location.host        
+        return Api.generateBotUrl(botname, host, isSecure)
+    }
 
     const getBotList = async () => {
         const data = await Api.getBotList(localStorage.token)
